@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "tb-game")
+@Table(name = "tb_game")
 
 public class Game {
     @Id
@@ -15,22 +15,24 @@ public class Game {
     @Column(name = "game_year")
     private Integer year;
     private String genre;
-    private String plataforms;
+    private String platforms;
     private Double score;
     private String imgUrl;
+    @Column(columnDefinition = "TEXT")
     private String shortDescription;
-    private String longdescription;
+    @Column(columnDefinition = "TEXT")
+    private String longDescription;
 
-    public Game(Long id, String title, Integer year, String genre, String plataforms, Double score, String imgUrl, String shortDescription, String longdescription) {
+    public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl, String shortDescription, String longDescription) {
         this.id = id;
         this.title = title;
         this.year = year;
         this.genre = genre;
-        this.plataforms = plataforms;
+        this.platforms = platforms;
         this.score = score;
         this.imgUrl = imgUrl;
         this.shortDescription = shortDescription;
-        this.longdescription = longdescription;
+        this.longDescription = longDescription;
     }
 
     public Game() {
@@ -69,12 +71,12 @@ public class Game {
         this.genre = genre;
     }
 
-    public String getPlataforms() {
-        return plataforms;
+    public String getplatforms() {
+        return platforms;
     }
 
-    public void setPlataforms(String plataforms) {
-        this.plataforms = plataforms;
+    public void setplatforms(String platforms) {
+        this.platforms = platforms;
     }
 
     public Double getScore() {
@@ -101,12 +103,12 @@ public class Game {
         this.shortDescription = shortDescription;
     }
 
-    public String getLongdescription() {
-        return longdescription;
+    public String getlongDescription() {
+        return longDescription;
     }
 
-    public void setLongdescription(String longdescription) {
-        this.longdescription = longdescription;
+    public void setlongDescription(String longDescription) {
+        this.longDescription = longDescription;
     }
 
     @Override
